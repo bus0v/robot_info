@@ -13,7 +13,6 @@ class RobotInfo {
         
     protected:
         ros::Publisher pub;
-        
         ros::NodeHandle *nh;
         string robot_description = "Mir100";
         string serial_number = "567A359";

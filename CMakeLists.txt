@@ -103,7 +103,7 @@ generate_messages(
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-  INCLUDE_DIRS include
+  INCLUDE_DIRS include src
   LIBRARIES robot_info
   CATKIN_DEPENDS robotinfo_msgs roscpp
 #  DEPENDS system_lib
@@ -123,7 +123,8 @@ add_dependencies(robot_info_node robot_info_generate_messages_cpp)
 add_executable(agv_robot_info_node 
 	src/agv_robot_info_class.cpp 
 	src/robot_info_class.cpp 
-	src/agv_robot_info_node)
+	src/agv_robot_info_node
+	src/hydraulic_system_monitor.cpp)
 
 target_link_libraries(agv_robot_info_node ${catkin_LIBRARIES})
 ## Specify additional locations of header files
