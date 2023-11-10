@@ -8,7 +8,7 @@ project(robot_info)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  robotinfo_msgs
+  
   roscpp
   message_generation
 )
@@ -69,8 +69,7 @@ add_message_files(
 ## Generate added messages and services with any dependencies listed here
 generate_messages(
   DEPENDENCIES
-  robotinfo_msgs
-  
+
 )
 
 ################################################
@@ -105,7 +104,7 @@ generate_messages(
 catkin_package(
   INCLUDE_DIRS include src
   LIBRARIES robot_info
-  CATKIN_DEPENDS robotinfo_msgs roscpp
+  CATKIN_DEPENDS roscpp
 #  DEPENDS system_lib
    
 )
