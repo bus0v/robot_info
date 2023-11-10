@@ -8,7 +8,6 @@ project(robot_info)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
-  
   roscpp
   message_generation
 )
@@ -66,7 +65,7 @@ add_message_files(
 #   Action2.action
 # )
 
-## Generate added messages and services with any dependencies listed here
+# Generate added messages and services with any dependencies listed here
 generate_messages(
   DEPENDENCIES
 
@@ -124,7 +123,7 @@ add_executable(agv_robot_info_node
 	src/robot_info_class.cpp 
 	src/agv_robot_info_node
 	src/hydraulic_system_monitor.cpp)
-
+add_dependencies(agv_robot_info_node robot_info_generate_messages_cpp)
 target_link_libraries(agv_robot_info_node ${catkin_LIBRARIES})
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
